@@ -17,9 +17,6 @@ define-command -override -params 1..2 fandt %{
     fi
   }
   on-key %{
-    set-option window fandt_char %val{key}
-    execute-keys %val{count} %arg{1} %val{key} %arg{2}
-    enter-user-mode -lock fandt
     hook -once -group fandt window RawKey .* %{
       hook -group fandt window RawKey .* %{
         evaluate-commands %sh{
@@ -32,6 +29,9 @@ define-command -override -params 1..2 fandt %{
         }
       }
     }
+    set-option window fandt_char %val{key}
+    execute-keys %val{count} %arg{1} %val{key} %arg{2}
+    enter-user-mode -lock fandt
   }
 }
 
