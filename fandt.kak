@@ -24,7 +24,7 @@ define-command -override -params 1..2 fandt %{
             f|F|t|T|"<a-f>"|"<a-F>"|"<a-t>"|"<a-T>") ;;
             *) echo "set-option window autoinfo '$kak_opt_fandt_autoinfo'"
                echo "remove-hooks window fandt"
-               echo "execute-keys -with-hooks -with-maps <esc> $kak_hook_param" ;;
+               echo "execute-keys -with-hooks -with-maps $kak_hook_param" ;;
           esac
         }
       }
@@ -47,35 +47,35 @@ define-command -hidden -override fandt-a-T %{ fandt <a-T> }
 # user mode commands
 
 define-command -hidden -override fandt-mode-f %{ 
-  execute-keys "<esc>f%opt{fandt_char}%opt{fandt_jump}"
+  execute-keys "f%opt{fandt_char}%opt{fandt_jump}"
 }
 
 define-command -hidden -override fandt-mode-F %{ 
-  execute-keys "<esc>F%opt{fandt_char}"
+  execute-keys "F%opt{fandt_char}"
 }
 
 define-command -hidden -override fandt-mode-a-f %{ 
-  execute-keys "<esc><a-f>%opt{fandt_char}%opt{fandt_jump}"
+  execute-keys "<a-f>%opt{fandt_char}%opt{fandt_jump}"
 }
 
 define-command -hidden -override fandt-mode-a-F %{ 
-  execute-keys "<esc><a-F>%opt{fandt_char}"
+  execute-keys "<a-F>%opt{fandt_char}"
 }
 
 define-command -hidden -override fandt-mode-t %{ 
-  execute-keys "<esc>lt%opt{fandt_char}%opt{fandt_jump}"
+  execute-keys "lt%opt{fandt_char}%opt{fandt_jump}"
 }
 
 define-command -hidden -override fandt-mode-T %{ 
-  execute-keys "<esc>LT%opt{fandt_char}"
+  execute-keys "LT%opt{fandt_char}"
 }
 
 define-command -hidden -override fandt-mode-a-t %{ 
-  execute-keys "<esc>h<a-t>%opt{fandt_char}%opt{fandt_jump}"
+  execute-keys "h<a-t>%opt{fandt_char}%opt{fandt_jump}"
 }
 
 define-command -hidden -override fandt-mode-a-T %{ 
-  execute-keys "<esc>H<a-T>%opt{fandt_char}"
+  execute-keys "H<a-T>%opt{fandt_char}"
 }
 
 # Mappings
